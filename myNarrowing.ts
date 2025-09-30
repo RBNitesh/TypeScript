@@ -19,12 +19,9 @@ function provideId(id: string | null) {
 function padLeft(padding: number | string, input: string): string {
   let pad = "";
   if (typeof padding === "number") {
-    for (let i = 0; i < padding; i++) {
-      pad += " ";
-    }
-  } else pad += padding;
-
-  return (pad += input);
+    return " ".repeat(padding) + input;
+  }
+  return padding + input;
 }
 
 console.log(padLeft(5, "dear"));
